@@ -1,0 +1,20 @@
+services:
+  node:
+    container_name: node
+    build: .
+    command: node /usr/src/app/index
+    image: node
+    restart: unless-stopped
+    volumes:
+      - "./app/:/usr/src/app"
+    networks:
+      - app-network
+    # HDMI devices
+    devices:
+      - "/dev/cec0:/dev/cec0"
+      - "/dev/gpiochip0:/dev/gpiochip0"
+    env_file:
+      - .env
+networks:
+  app-network:
+    driver: bridge

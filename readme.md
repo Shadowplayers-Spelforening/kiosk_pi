@@ -1,0 +1,1 @@
+- This app runs on the raspi by the entrance. The server hosts kiosk_webserver.
