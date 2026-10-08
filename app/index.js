@@ -24,8 +24,10 @@ let lastOff = 0;
 			console.error(err);
 		}
 	};
+	
 	await refresh();
 	await Gpio.init();
+
 	setInterval(refresh, 600000);
 	
 	setInterval(async () => {
